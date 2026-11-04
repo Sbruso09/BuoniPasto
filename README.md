@@ -1,5 +1,9 @@
 # Buoni Pasto
 
+**Novità 2.0:** stile iOS scuro, lingua italiana o inglese, pagina Impostazioni, assistente AI (Gemini con Groq di riserva, entrambe le chiavi gratuite) che fa resoconti e consiglia i prodotti più convenienti cercando i prezzi sul web, e lista della spesa creata dal PDF della dieta.
+
+L'APK viene compilato automaticamente da GitHub Actions a ogni modifica e pubblicato nella sezione **Releases** del repository.
+
 App Android per due persone: ognuno entra con il proprio nome, aggiunge a mano le spese pagate con i buoni e vede chi deve quanto a chi. I dati si sincronizzano tra i telefoni con Firebase.
 
 ## 1. Crea il progetto Firebase (piano gratuito Spark)

@@ -21,7 +21,7 @@ jobs:
         run: |
           set -o pipefail
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon 2>&1 | tee build.log
+          ./gradlew testReleaseUnitTest assembleRelease --no-daemon 2>&1 | tee build.log
       - uses: actions/upload-artifact@v4
         with:
           name: BuoniPasto-apk
@@ -39,5 +39,5 @@ jobs:
         run: |
           # gli errori diventano annotazioni, leggibili dall'API anche senza scaricare i log
           if [ -f build.log ]; then
-            grep -E "^e: |error:|What went wrong|\* What went wrong" -A4 build.log | head -60 | while IFS= read -r riga; do echo "::error::$riga"; done
+            grep -E "^e: |error:|What went wrong|FAILED|AssertionError|expected" -A4 build.log | head -60 | while IFS= read -r riga; do echo "::error::$riga"; done
           fi
