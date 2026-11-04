@@ -226,4 +226,15 @@
     <string name="mod_esempio">e.g. 250 g</string>
     <string name="stima_testo" formatted="true">Estimated cost: about %1$s · %2$d vouchers of %3$s needed (indicative average prices)</string>
     <string name="stima_testo_1" formatted="true">Estimated cost: about %1$s · %2$d voucher of %3$s is enough (indicative average prices)</string>
+    <string name="tab_menu" formatted="true">Menu</string>
+    <string name="menu_oggi" formatted="true">Today</string>
+    <string name="menu_vuoto_t" formatted="true">No diet loaded</string>
+    <string name="menu_vuoto" formatted="true">Load the diet PDF: here you will see all the meals of the day, changing automatically every day.</string>
+    <string name="menu_carica" formatted="true">Load the PDF</string>
+    <string name="menu_lettura" formatted="true">Reading the diet…</string>
+    <string name="menu_fase" formatted="true">Reading the days: %1$d of %2$d…</string>
+    <string name="menu_errore" formatted="true">Could not read the diet: %1$s</string>
+    <string name="menu_chiave" formatted="true">To read the PDF, set the Gemini key in Settings.</string>
+    <string name="menu_entrambi" formatted="true">Both</string>
+    <string name="menu_nessun_pasto" formatted="true">No meals for this day.</string>
 </resources>

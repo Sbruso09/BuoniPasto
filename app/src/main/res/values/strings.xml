@@ -226,4 +226,15 @@
     <string name="mod_esempio">es. 250 g</string>
     <string name="stima_testo" formatted="true">Spesa stimata: circa %1$s · servono %2$d buoni da %3$s (prezzi medi indicativi)</string>
     <string name="stima_testo_1" formatted="true">Spesa stimata: circa %1$s · basta %2$d buono da %3$s (prezzi medi indicativi)</string>
+    <string name="tab_menu" formatted="true">Menu</string>
+    <string name="menu_oggi" formatted="true">Oggi</string>
+    <string name="menu_vuoto_t" formatted="true">Nessuna dieta caricata</string>
+    <string name="menu_vuoto" formatted="true">Carica il PDF della dieta: qui vedrai tutti i pasti del giorno, che cambiano in automatico ogni giorno.</string>
+    <string name="menu_carica" formatted="true">Carica il PDF</string>
+    <string name="menu_lettura" formatted="true">Leggo la dieta…</string>
+    <string name="menu_fase" formatted="true">Leggo i giorni: %1$d di %2$d…</string>
+    <string name="menu_errore" formatted="true">Non sono riuscito a leggere la dieta: %1$s</string>
+    <string name="menu_chiave" formatted="true">Per leggere il PDF imposta la chiave Gemini nelle Impostazioni.</string>
+    <string name="menu_entrambi" formatted="true">Entrambi</string>
+    <string name="menu_nessun_pasto" formatted="true">Nessun pasto per questo giorno.</string>
 </resources>

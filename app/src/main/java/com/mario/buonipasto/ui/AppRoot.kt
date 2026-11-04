@@ -32,6 +32,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
+import com.mario.buonipasto.ai.MenuDieta
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mario.buonipasto.R
 import com.mario.buonipasto.data.DatiApp
@@ -45,6 +47,7 @@ const val TAB_BUONI = 0
 const val TAB_LISTA = 1
 const val TAB_ASSISTENTE = 2
 const val TAB_IMPOSTAZIONI = 3
+const val TAB_MENU = 4
 
 private val GrigioSistema = Color(0xFF8E8E93)
 
@@ -84,6 +87,11 @@ fun AppRoot(
                 TAB_BUONI -> HomeScreen(repository, session, membersFeed, movementsFeed)
                 TAB_LISTA -> ShoppingScreen()
                 TAB_ASSISTENTE -> AssistantScreen(onVaiImpostazioni = { tab = TAB_IMPOSTAZIONI })
+                // menu del giorno dalla dieta salvata (schermata nativa)
+                TAB_MENU -> AndroidView(
+                    factory = { MenuDieta.Fabbrica().invoke(it) as android.view.View },
+                    modifier = Modifier.fillMaxSize(),
+                )
                 else -> SettingsScreen(repository, session, membersFeed?.items.orEmpty(), onLogout)
             }
         }
@@ -92,16 +100,18 @@ fun AppRoot(
 
 @Composable
 private fun TabBar(selezionata: Int, onSeleziona: (Int) -> Unit) {
+    // scheda, icona, nome (in ordine di come appaiono nella barra)
     val voci = listOf(
-        R.drawable.ic_tab_buoni to R.string.tab_buoni,
-        R.drawable.ic_tab_lista to R.string.tab_lista,
-        R.drawable.ic_tab_chat to R.string.tab_assistente,
-        R.drawable.ic_tab_settings to R.string.tab_impostazioni,
+        Triple(TAB_BUONI, R.drawable.ic_tab_buoni, R.string.tab_buoni),
+        Triple(TAB_LISTA, R.drawable.ic_tab_lista, R.string.tab_lista),
+        Triple(TAB_MENU, R.drawable.ic_tab_menu, R.string.tab_menu),
+        Triple(TAB_ASSISTENTE, R.drawable.ic_tab_chat, R.string.tab_assistente),
+        Triple(TAB_IMPOSTAZIONI, R.drawable.ic_tab_settings, R.string.tab_impostazioni),
     )
     Column(Modifier.fillMaxWidth().background(Ios.chrome)) {
         Box(Modifier.fillMaxWidth().height(0.5.dp).background(Ios.separator))
         Row(Modifier.fillMaxWidth().navigationBarsPadding().height(54.dp)) {
-            voci.forEachIndexed { i, (icona, nome) ->
+            voci.forEach { (i, icona, nome) ->
                 val attiva = i == selezionata
                 val colore by animateColorAsState(if (attiva) Ios.accent else GrigioSistema, label = "tab")
                 val scala by animateFloatAsState(

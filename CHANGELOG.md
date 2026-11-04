@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.0 — 2026-11-04: Nuova scheda Menu con i pasti del giorno
+
+- Scheda "Menu" nella barra in basso: carica il PDF della dieta e mostra tutti i pasti del giorno, che cambiano da soli a mezzanotte.
+- Settimana scorrevole, e per le diete di due persone una tabella con una colonna per persona (filtro Entrambi / A / B).
+
 ## 2.9 — 2026-11-04: Carni separate nella lista
 
 - Pollo, vitello, manzo, maiale, pesce... restano prodotti diversi.
