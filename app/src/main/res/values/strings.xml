@@ -199,4 +199,17 @@
         <item quantity="one">%d articolo da prendere</item>
         <item quantity="other">%d articoli da prendere</item>
     </plurals>
+    <string name="chip_due_diete_l">Unisci due diete</string>
+    <string name="chip_due_diete_t">Crea una dieta unica da due diete</string>
+    <string name="persone_titolo">Per quante persone?</string>
+    <string name="persone_testo">La dieta del PDF è per una persona: scegliendo 2 persone le quantità vengono raddoppiate. Se la dieta contiene già due persone (A e B) restano quelle della dieta.</string>
+    <string name="persone_1">1 persona</string>
+    <string name="persone_2">2 persone</string>
+    <string name="persone_fonte">%1$s · 2 persone</string>
+    <string name="due_diete_scegli">Scegli i PDF delle due diete: puoi selezionarli insieme.</string>
+    <string name="due_diete_seconda">Ora scegli la seconda dieta.</string>
+    <string name="due_diete_messaggio">📎 %1$s + %2$s\nCrea una dieta unica per due persone.</string>
+    <string name="due_diete_fase">Leggo le due diete…</string>
+    <string name="due_diete_errore">Non riesco a leggere le diete: %1$s</string>
+    <string name="due_diete_chiavi">Per unire le diete servono le chiavi dell\'assistente: aggiungile nelle Impostazioni.</string>
 </resources>

@@ -23,6 +23,13 @@
             </intent-filter>
         </activity>
 
+        <!-- schermate trasparenti che aprono la scelta dei PDF (due diete da unire, dieta del menu) -->
+        <activity
+            android:name=".ai.DueDiete$Scelta"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <service
             android:name=".ai.Servizio"
             android:exported="false"

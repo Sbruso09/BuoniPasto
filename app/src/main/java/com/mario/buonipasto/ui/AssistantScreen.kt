@@ -93,6 +93,7 @@ private data class Suggerimento(val etichetta: Int, val testo: Int, val completa
 
 private val SUGGERIMENTI = listOf(
     Suggerimento(R.string.chip_prodotto_l, R.string.chip_prodotto_t, true),
+    Suggerimento(R.string.chip_due_diete_l, R.string.chip_due_diete_t, false),
     Suggerimento(R.string.chip_mese_l, R.string.chip_mese_t, false),
     Suggerimento(R.string.chip_chi_l, R.string.chip_chi_t, false),
     Suggerimento(R.string.chip_buoni_l, R.string.chip_buoni_t, false),

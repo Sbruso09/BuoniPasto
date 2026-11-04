@@ -76,6 +76,7 @@ object Motore {
 
     /** Invia una domanda: il messaggio dell'utente viene salvato subito, la risposta quando arriva. */
     fun avvia(contesto: Context, domanda: String) {
+        if (DueDiete.intercetta(contesto, domanda)) return // "unisci due diete": sceglie i PDF e li unisce
         val ctx = contesto.applicationContext
         val chiave = ChiaveAi.leggi(ctx) ?: return
         val chiaveGroq = ChiaveAi.leggi(ctx, ChiaveAi.GROQ) ?: return

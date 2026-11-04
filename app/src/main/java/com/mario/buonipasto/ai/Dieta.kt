@@ -41,7 +41,12 @@ object Dieta {
         if (!_stato.value.inCorso) _stato.value = StatoDieta()
     }
 
+    /** Prima chiede per quante persone e' la spesa, poi legge la dieta. */
     fun importa(contesto: Context, uri: Uri, nomeFile: String, giorni: Int) {
+        PersoneDieta.chiedi(contesto, uri, nomeFile, giorni)
+    }
+
+    fun importaDavvero(contesto: Context, uri: Uri, nomeFile: String, giorni: Int) {
         if (inCorso) return
         val ctx = contesto.applicationContext
         val lc = Lingua.contesto(ctx)
@@ -89,7 +94,7 @@ object Dieta {
             Reparti ammessi: ${Reparti.CHIAVI.joinToString(", ")}.
             Rispondi SOLO con JSON valido, senza altro testo, in questo formato:
             {"articoli":[{"nome":"...","quantita":"...","reparto":"..."}]}
-        """.trimIndent()
+        """.trimIndent().let { PersoneDieta.aggiungi(it) }
     }
 
     private fun leggi(ctx: Context, uri: Uri, nomeFile: String, giorni: Int, chiave: String, chiaveGroq: String): List<Articolo> {

@@ -199,4 +199,17 @@
         <item quantity="one">%d item to get</item>
         <item quantity="other">%d items to get</item>
     </plurals>
+    <string name="chip_due_diete_l">Merge two diets</string>
+    <string name="chip_due_diete_t">Create a single diet from two diets</string>
+    <string name="persone_titolo">For how many people?</string>
+    <string name="persone_testo">The diet in the PDF is for one person: choosing 2 people doubles the quantities. If the diet already covers two people (A and B) they stay as in the diet.</string>
+    <string name="persone_1">1 person</string>
+    <string name="persone_2">2 people</string>
+    <string name="persone_fonte">%1$s · 2 people</string>
+    <string name="due_diete_scegli">Choose the two diet PDFs: you can select them together.</string>
+    <string name="due_diete_seconda">Now choose the second diet.</string>
+    <string name="due_diete_messaggio">📎 %1$s + %2$s\nCreate a single diet for two people.</string>
+    <string name="due_diete_fase">Reading both diets…</string>
+    <string name="due_diete_errore">I can\'t read the diets: %1$s</string>
+    <string name="due_diete_chiavi">To merge the diets you need the assistant keys: add them in Settings.</string>
 </resources>
