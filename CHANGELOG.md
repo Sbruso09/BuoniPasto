@@ -2,6 +2,12 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.7 — 2026-11-04: Yogurt greco, croissant e alimenti dei piatti composti
+
+- Lo yogurt greco resta un prodotto a sé (non finisce più nei fiocchi di latte).
+- "50 pz" di croissant e simili diventano grammi.
+- Gli ingredienti dei piatti composti non vengono più saltati: se manca nel catalogo entrano comunque nella lista.
+
 ## 2.6 — 2026-11-04: Spesa per giorni della settimana e quantità modificabili
 
 - Al posto di 3/7/14 giorni si scelgono i giorni della settimana (anche non consecutivi): la lista contiene solo gli alimenti di quei giorni.
