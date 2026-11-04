@@ -1,6 +1,7 @@
 package com.mario.buonipasto.data
 
 import com.google.firebase.auth.FirebaseAuth
+import com.mario.buonipasto.R
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Source
@@ -9,7 +10,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
 
-class LoginException(message: String) : Exception(message)
+/** Errore di accesso: il testo arriva dalle risorse, nella lingua dell'app. */
+class LoginException(val res: Int, val arg: String? = null) : Exception()
 
 /** The latest items from the server, plus the reason if the last update failed. */
 data class Feed<T>(val items: List<T>, val error: String? = null)
@@ -29,8 +31,8 @@ class Repository(
         val code = normalizeGroupCode(rawCode)
         val name = rawName.trim()
         val memberId = normalizeMemberId(name)
-        if (code.length < 6) throw LoginException("Il codice del gruppo deve avere almeno 6 caratteri.")
-        if (memberId.isEmpty()) throw LoginException("Inserisci il tuo nome.")
+        if (code.length < 6) throw LoginException(R.string.login_err_codice)
+        if (memberId.isEmpty()) throw LoginException(R.string.login_err_nome)
 
         if (auth.currentUser == null) auth.signInAnonymously().await()
 
@@ -44,11 +46,11 @@ class Repository(
         }
 
         if (existing.size >= 2) {
-            val names = existing.joinToString(" e ") { it.getString("name") ?: it.id }
-            throw LoginException("Questo gruppo è già al completo: ci sono $names. Entra con uno di questi nomi.")
+            val names = existing.joinToString(" · ") { it.getString("name") ?: it.id }
+            throw LoginException(R.string.login_err_completo, names)
         }
         if (voucherCents == null || voucherCents <= 0) {
-            throw LoginException("Inserisci il valore del tuo buono per entrare nel gruppo.")
+            throw LoginException(R.string.login_err_buono)
         }
 
         members(code).document(memberId)
@@ -60,7 +62,7 @@ class Repository(
     fun observeMembers(code: String): Flow<Feed<Member>> = callbackFlow {
         val registration = members(code).addSnapshotListener { snapshot, error ->
             if (error != null) {
-                trySend(Feed(emptyList(), error.localizedMessage ?: "Errore di connessione"))
+                trySend(Feed(emptyList(), error.localizedMessage ?: ""))
             } else if (snapshot != null) {
                 trySend(Feed(snapshot.documents.mapNotNull { toMember(it) }.sortedBy { it.id }))
             }
@@ -71,7 +73,7 @@ class Repository(
     fun observeMovements(code: String): Flow<Feed<Movement>> = callbackFlow {
         val registration = movements(code).addSnapshotListener { snapshot, error ->
             if (error != null) {
-                trySend(Feed(emptyList(), error.localizedMessage ?: "Errore di connessione"))
+                trySend(Feed(emptyList(), error.localizedMessage ?: ""))
             } else if (snapshot != null) {
                 val items = snapshot.documents.mapNotNull { toMovement(it) }
                     .sortedWith(compareByDescending<Movement> { it.dateMillis }.thenByDescending { it.createdAt })

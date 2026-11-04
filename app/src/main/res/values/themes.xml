@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.BuoniPasto" parent="android:Theme.Material.Light.NoActionBar" />
-    <color name="ic_launcher_background">#2346C7</color>
+    <style name="Theme.BuoniPasto" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="colorAccent">#5E5CE6</item>
+    </style>
+    <color name="ic_launcher_background">#5E5CE6</color>
 </resources>

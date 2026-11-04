@@ -4,23 +4,18 @@ import android.app.DatePickerDialog
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.SegmentedButton
-import androidx.compose.material3.SegmentedButtonDefaults
-import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -32,10 +27,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.mario.buonipasto.R
 import com.mario.buonipasto.data.Member
 import com.mario.buonipasto.data.Movement
 import com.mario.buonipasto.data.MovementType
@@ -62,107 +58,87 @@ fun AddExpenseSheet(
 
     val extraCents = if (extra.isBlank()) 0L else parseCents(extra)
     val total = vouchers * me.voucherCents + (extraCents ?: 0L)
-    val otherName = other?.name ?: "l'altra persona"
+    val otherName = other?.name ?: stringResource(R.string.altra_persona)
     val splitOptions = listOf(
-        Split.HALF to "A metà",
-        Split.PAYER_ONLY to "Solo mia",
-        Split.OTHER_ONLY to "Di $otherName",
+        Split.HALF to stringResource(R.string.split_meta),
+        Split.PAYER_ONLY to stringResource(R.string.split_mia),
+        Split.OTHER_ONLY to stringResource(R.string.split_di, otherName),
     )
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
+        containerColor = Ios.surface,
+        shape = RoundedCornerShape(topStart = 14.dp, topEnd = 14.dp),
     ) {
         Column(
             modifier = Modifier
                 .navigationBarsPadding()
                 .imePadding()
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 20.dp)
                 .padding(bottom = 24.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.spacedBy(14.dp),
         ) {
-            Text(
-                text = "Spesa pagata da ${me.name}",
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold,
-            )
+            Text(stringResource(R.string.spesa_pagata_da, me.name), style = IosText.title3, color = Ios.textPrimary)
 
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Column(modifier = Modifier.weight(1f)) {
-                    Text("Buoni usati", style = MaterialTheme.typography.bodyLarge)
-                    Text(
-                        "Da ${formatEuro(me.voucherCents)} l'uno",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
+                Column(Modifier.weight(1f)) {
+                    Text(stringResource(R.string.buoni_usati_label), style = IosText.body, color = Ios.textPrimary)
+                    Text(stringResource(R.string.da_luno, formatEuro(me.voucherCents)), style = IosText.footnote, color = Ios.textSecondary)
                 }
-                FilledTonalButton(
-                    enabled = vouchers > 1,
-                    onClick = { vouchers -= 1 },
-                ) { Text("−") }
-                Text(
-                    text = vouchers.toString(),
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(horizontal = 16.dp),
+                Stepper(vouchers, onMinus = { if (vouchers > 0) vouchers -= 1 }, onPlus = { vouchers += 1 }, minusEnabled = vouchers > 0)
+            }
+
+            Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text(stringResource(R.string.extra_label), style = IosText.footnote, color = Ios.textSecondary)
+                IosField(
+                    value = extra,
+                    onValueChange = { extra = it },
+                    placeholder = "0,00",
+                    error = extraCents == null,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                 )
-                FilledTonalButton(onClick = { vouchers += 1 }) { Text("+") }
+                if (extraCents == null) Text(stringResource(R.string.extra_errore), style = IosText.footnote, color = Ios.red)
             }
 
-            OutlinedTextField(
-                value = extra,
-                onValueChange = { extra = it },
-                label = { Text("Pagato in più con carta o contanti (€)") },
-                isError = extraCents == null,
-                supportingText = {
-                    if (extraCents == null) Text("Scrivi l'importo come 4,50.")
-                },
-                singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-                modifier = Modifier.fillMaxWidth(),
+            Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text(stringResource(R.string.nota_label), style = IosText.footnote, color = Ios.textSecondary)
+                IosField(
+                    value = note,
+                    onValueChange = { note = it },
+                    placeholder = stringResource(R.string.nota_esempio),
+                    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
+                )
+            }
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(stringResource(R.string.data_label), style = IosText.body, color = Ios.textPrimary, modifier = Modifier.weight(1f))
+                PillButton(
+                    date.format(formatoData()),
+                    onClick = {
+                        DatePickerDialog(
+                            context,
+                            { _, year, month, day -> date = LocalDate.of(year, month + 1, day) },
+                            date.year,
+                            date.monthValue - 1,
+                            date.dayOfMonth,
+                        ).show()
+                    },
+                )
+            }
+
+            Text(stringResource(R.string.di_chi_spesa), style = IosText.footnote, color = Ios.textSecondary)
+            Segmented(
+                options = splitOptions.map { it.second },
+                selected = splitOptions.indexOfFirst { it.first == split },
+                onSelect = { split = splitOptions[it].first },
             )
 
-            OutlinedTextField(
-                value = note,
-                onValueChange = { note = it },
-                label = { Text("Nota, ad esempio spesa al supermercato") },
-                singleLine = true,
-                keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
-                modifier = Modifier.fillMaxWidth(),
-            )
-
-            OutlinedButton(
-                modifier = Modifier.fillMaxWidth(),
-                onClick = {
-                    DatePickerDialog(
-                        context,
-                        { _, year, month, day -> date = LocalDate.of(year, month + 1, day) },
-                        date.year,
-                        date.monthValue - 1,
-                        date.dayOfMonth,
-                    ).show()
-                },
-            ) {
-                Text("Data: ${date.format(ITALIAN_DATE)}")
-            }
-
-            Text("Di chi è la spesa", style = MaterialTheme.typography.bodyLarge)
-            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                splitOptions.forEachIndexed { index, (value, label) ->
-                    SegmentedButton(
-                        selected = split == value,
-                        onClick = { split = value },
-                        shape = SegmentedButtonDefaults.itemShape(index, splitOptions.size),
-                    ) {
-                        Text(label, maxLines = 1)
-                    }
-                }
-            }
-
-            Button(
+            Spacer(Modifier.height(4.dp))
+            PrimaryButton(
+                text = stringResource(R.string.aggiungi_spesa_da, formatEuro(total)),
                 enabled = extraCents != null && total > 0,
-                modifier = Modifier.fillMaxWidth(),
                 onClick = {
                     val now = System.currentTimeMillis()
                     onSave(
@@ -183,9 +159,7 @@ fun AddExpenseSheet(
                         ),
                     )
                 },
-            ) {
-                Text("Aggiungi spesa da ${formatEuro(total)}")
-            }
+            )
         }
     }
 }

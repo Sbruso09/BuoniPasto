@@ -13,8 +13,8 @@ android {
         applicationId = "com.mario.buonipasto"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "2.0"
     }
 
     signingConfigs {
@@ -49,6 +49,10 @@ android {
     buildFeatures {
         compose = true
     }
+
+    androidResources {
+        generateLocaleConfig = false
+    }
 }
 
 dependencies {
@@ -59,6 +63,9 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("com.google.code.gson:gson:2.11.0")
 
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-auth")

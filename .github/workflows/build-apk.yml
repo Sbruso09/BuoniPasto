@@ -19,8 +19,9 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - name: Compila l'APK
         run: |
+          set -o pipefail
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
+          ./gradlew assembleRelease --no-daemon 2>&1 | tee build.log
       - uses: actions/upload-artifact@v4
         with:
           name: BuoniPasto-apk
@@ -29,7 +30,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp app/build/outputs/apk/release/*.apk BuoniPasto.apk
-          gh release create "v1.0-build${{ github.run_number }}" BuoniPasto.apk \
-            --title "BuoniPasto build ${{ github.run_number }}" \
+          VERSIONE=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
+          cp app/build/outputs/apk/release/*.apk "BuoniPasto-v${VERSIONE}.apk"
+          gh release create "v${VERSIONE}-build${{ github.run_number }}" "BuoniPasto-v${VERSIONE}.apk" \
+            --title "BuoniPasto ${VERSIONE} (build ${{ github.run_number }})" \
             --notes "APK compilato automaticamente da GitHub Actions."
+      - name: Registro degli errori
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "log-build${{ github.run_number }}" build.log --prerelease \
+            --title "Errori build ${{ github.run_number }}" --notes "Registro della compilazione non riuscita."
