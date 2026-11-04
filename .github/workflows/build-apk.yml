@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,3 +25,11 @@ jobs:
         with:
           name: BuoniPasto-apk
           path: app/build/outputs/apk/release/*.apk
+      - name: Pubblica l'APK nelle Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/release/*.apk BuoniPasto.apk
+          gh release create "v1.0-build${{ github.run_number }}" BuoniPasto.apk \
+            --title "BuoniPasto build ${{ github.run_number }}" \
+            --notes "APK compilato automaticamente da GitHub Actions."
