@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.2 — 2026-11-04: Quantità della lista calcolate dall'app
+
+- L'AI estrae dal PDF ogni alimento con quantità e unità; somme e proporzioni le calcola l'app, non il modello.
+- Riserva Groq: le pagine del PDF vengono lette come immagini, tre alla volta.
+
 ## 2.1 — 2026-11-04: Dieta per 1 o 2 persone e unione di due diete
 
 - Quando si importa una dieta l'app chiede se la spesa è per 1 o 2 persone; con 2 le quantità raddoppiano.
