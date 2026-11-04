@@ -31,14 +31,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSIONE=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
-          cp app/build/outputs/apk/release/*.apk "BuoniPasto-v${VERSIONE}.apk"
-          gh release create "v${VERSIONE}-build${{ github.run_number }}" "BuoniPasto-v${VERSIONE}.apk" \
-            --title "BuoniPasto ${VERSIONE} (build ${{ github.run_number }})" \
-            --notes "APK compilato automaticamente da GitHub Actions."
+          ls app/build/outputs/apk/release/
+          cp app/build/outputs/apk/release/app-release.apk "BuoniPasto-v${VERSIONE}.apk"
+          OUT=$(gh release create "v${VERSIONE}-build${{ github.run_number }}" "BuoniPasto-v${VERSIONE}.apk" --title "BuoniPasto ${VERSIONE} build ${{ github.run_number }}" --notes "APK compilato automaticamente da GitHub Actions." 2>&1) || { echo "::error::release: $OUT"; exit 1; }
       - name: Registro degli errori
         if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "log-build${{ github.run_number }}" build.log --prerelease \
-            --title "Errori build ${{ github.run_number }}" --notes "Registro della compilazione non riuscita."
+          # gli errori diventano annotazioni, leggibili dall'API anche senza scaricare i log
+          if [ -f build.log ]; then
+            grep -E "^e: |error:|What went wrong|\* What went wrong" -A4 build.log | head -60 | while IFS= read -r riga; do echo "::error::$riga"; done
+          fi
