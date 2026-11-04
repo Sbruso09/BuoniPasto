@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.2 — 2026-11-04: Pulsanti della lista in alto
+
+- "Elimina selezionati" e "Svuota la lista" sono in cima alla lista.
+
 ## 3.1 — 2026-11-04: PDF della dieta nelle Impostazioni
 
 - Il PDF si carica una sola volta nelle Impostazioni: menu e alimenti per la spesa vengono salvati.

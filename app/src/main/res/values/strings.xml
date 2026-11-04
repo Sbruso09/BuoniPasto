@@ -164,7 +164,7 @@
     <string name="lista_esempio">Ad esempio latte</string>
     <string name="lista_vuota">Lista vuota</string>
     <string name="lista_vuota_testo">Aggiungi un alimento qui sopra oppure crea la lista dal PDF della dieta.</string>
-    <string name="lista_tieni_premuto">Tocca per spuntare, tieni premuto per eliminare.</string>
+    <string name="lista_tieni_premuto">Tocca per spuntare, tieni premuto per modificare la quantità o eliminare. I tasti per eliminare sono in alto.</string>
     <string name="lista_togli_presi">Togli quelli già presi</string>
     <string name="lista_svuota">Svuota la lista</string>
     <string name="lista_svuota_testo">Tutti gli articoli verranno eliminati.</string>
@@ -250,4 +250,5 @@
     <string name="lista_creata" formatted="true">Aggiunti %1$d alimenti alla lista</string>
     <string name="dieta_attendi" formatted="true">Sto ancora leggendo la dieta, attendi qualche secondo…</string>
     <string name="menu_fase_spesa" formatted="true">Preparo gli alimenti per la lista della spesa…</string>
+    <string name="lista_elimina_presi">Elimina selezionati</string>
 </resources>

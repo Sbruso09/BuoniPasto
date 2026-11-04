@@ -164,7 +164,7 @@
     <string name="lista_esempio">For example milk</string>
     <string name="lista_vuota">Empty list</string>
     <string name="lista_vuota_testo">Add an item above or build the list from your diet PDF.</string>
-    <string name="lista_tieni_premuto">Tap to check off, long-press to delete.</string>
+    <string name="lista_tieni_premuto">Tap to check off, long-press to edit the quantity or delete. The delete buttons are at the top.</string>
     <string name="lista_togli_presi">Remove checked items</string>
     <string name="lista_svuota">Clear the list</string>
     <string name="lista_svuota_testo">All items will be deleted.</string>
@@ -250,4 +250,5 @@
     <string name="lista_creata" formatted="true">Added %1$d foods to the list</string>
     <string name="dieta_attendi" formatted="true">Still reading the diet, please wait a few seconds…</string>
     <string name="menu_fase_spesa" formatted="true">Preparing the foods for the shopping list…</string>
+    <string name="lista_elimina_presi">Delete checked</string>
 </resources>

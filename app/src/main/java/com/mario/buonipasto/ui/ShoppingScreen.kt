@@ -52,6 +52,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.mario.buonipasto.ai.GiorniDieta
 import com.mario.buonipasto.ai.ModificaArticolo
 import com.mario.buonipasto.ai.Stima
@@ -69,8 +70,6 @@ fun ShoppingScreen() {
     val articoli by ListaSpesa.articoli.collectAsStateWithLifecycle()
     val dieta by Dieta.stato.collectAsStateWithLifecycle()
     var nuovo by remember { mutableStateOf("") }
-    var chiediSvuota by remember { mutableStateOf(false) }
-
     // i dialoghi nativi (giorni e persone, modifica articolo) usano il contesto di questa schermata
     SideEffect { GiorniDieta.registra(context) }
 
@@ -88,6 +87,11 @@ fun ShoppingScreen() {
         LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 32.dp)) {
             // ------------------------------------------------------------ importa dieta
             item {
+                // "Aggiungi spesa", "Elimina selezionati" e "Svuota la lista"
+                AndroidView(
+                    factory = { Stima.FabbricaAzioni().invoke(it) as android.view.View },
+                    modifier = Modifier.fillMaxWidth(),
+                )
                 GroupCard(padding = PaddingValues(16.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         IconTile(Ios.red, painter = painterResource(R.drawable.ic_pdf), size = 40.dp)
@@ -193,34 +197,9 @@ fun ShoppingScreen() {
                 }
                 item {
                     GroupFooter(stringResource(R.string.lista_tieni_premuto))
-                    GroupHeader("")
-                    GroupCard {
-                        IosRow(
-                            stringResource(R.string.lista_togli_presi),
-                            titleColor = if (articoli.any { it.preso }) Ios.accent else Ios.textTertiary,
-                            onClick = { ListaSpesa.togliPresi(context) },
-                        )
-                        RowSeparator()
-                        IosRow(stringResource(R.string.lista_svuota), titleColor = Ios.red, onClick = { chiediSvuota = true })
-                    }
                 }
             }
         }
-    }
-
-    if (chiediSvuota) {
-        IosAlert(
-            title = stringResource(R.string.lista_svuota),
-            text = stringResource(R.string.lista_svuota_testo),
-            confirm = stringResource(R.string.lista_svuota),
-            dismiss = stringResource(R.string.annulla),
-            destructive = true,
-            onDismiss = { chiediSvuota = false },
-            onConfirm = {
-                ListaSpesa.svuota(context)
-                chiediSvuota = false
-            },
-        )
     }
 }
 
