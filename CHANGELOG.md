@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.1 — 2026-11-04: PDF della dieta nelle Impostazioni
+
+- Il PDF si carica una sola volta nelle Impostazioni: menu e alimenti per la spesa vengono salvati.
+- "Crea la lista dalla dieta" chiede giorni e persone e crea la lista all'istante, senza rileggere il PDF.
+
 ## 3.0.3 — 2026-11-04: Menu tradotto nella lingua dell'app
 
 - Se la dieta è in un'altra lingua il menu viene tradotto una volta e salvato.

@@ -148,8 +148,8 @@
     <string name="notif_ai_lavoro_canale">Assistente al lavoro</string>
     <string name="notif_ai_lavoro">Sto preparando la risposta…</string>
     <string name="dieta_titolo">Lista dalla dieta</string>
-    <string name="dieta_sottotitolo">Scegli il PDF della dieta: l\'assistente legge tutti i pasti e crea la lista della spesa divisa per reparto.</string>
-    <string name="dieta_scegli">Scegli il PDF della dieta</string>
+    <string name="dieta_sottotitolo">"Scegli giorni e persone: la lista si crea all'istante dalla dieta salvata nelle Impostazioni."</string>
+    <string name="dieta_scegli">Crea la lista dalla dieta</string>
     <string name="dieta_quanti_giorni">Per quanti giorni?</string>
     <string name="dieta_quanti_giorni_testo">Le quantità vengono calcolate per il periodo scelto e aggiunte alla lista.</string>
     <string name="dieta_crea">Crea la lista</string>
@@ -238,4 +238,16 @@
     <string name="menu_entrambi" formatted="true">Entrambi</string>
     <string name="menu_nessun_pasto" formatted="true">Nessun pasto per questo giorno.</string>
     <string name="menu_traduco">Traduco il menu…</string>
+    <string name="imp_dieta" formatted="true">Dieta</string>
+    <string name="imp_dieta_pdf" formatted="true">PDF della dieta</string>
+    <string name="imp_dieta_nessuno" formatted="true">Nessun PDF caricato</string>
+    <string name="imp_dieta_carica" formatted="true">Carica il PDF</string>
+    <string name="imp_dieta_cambia" formatted="true">Sostituisci il PDF</string>
+    <string name="imp_dieta_rileggi" formatted="true">da ricaricare</string>
+    <string name="imp_dieta_nota" formatted="true">Il PDF viene letto una sola volta: la scheda Menu e la lista della spesa usano subito i dati salvati. La dieta è condivisa con l\'altra persona del gruppo, come le chiavi AI.</string>
+    <string name="lista_nessuna_dieta_t" formatted="true">Nessuna dieta salvata</string>
+    <string name="lista_nessuna_dieta" formatted="true">Carica il PDF della dieta: viene letto una volta sola e poi la lista si crea all\'istante.</string>
+    <string name="lista_creata" formatted="true">Aggiunti %1$d alimenti alla lista</string>
+    <string name="dieta_attendi" formatted="true">Sto ancora leggendo la dieta, attendi qualche secondo…</string>
+    <string name="menu_fase_spesa" formatted="true">Preparo gli alimenti per la lista della spesa…</string>
 </resources>

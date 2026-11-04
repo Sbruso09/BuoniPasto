@@ -34,6 +34,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -70,10 +71,8 @@ fun ShoppingScreen() {
     var nuovo by remember { mutableStateOf("") }
     var chiediSvuota by remember { mutableStateOf(false) }
 
-    val scegliPdf = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-        // giorni della settimana e persone, poi la lettura
-        if (uri != null) GiorniDieta.daPdf(context, uri)
-    }
+    // i dialoghi nativi (giorni e persone, modifica articolo) usano il contesto di questa schermata
+    SideEffect { GiorniDieta.registra(context) }
 
     Column(Modifier.fillMaxSize().background(Ios.background).statusBarsPadding()) {
         Row(Modifier.fillMaxWidth().padding(end = 16.dp, top = 6.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -106,7 +105,8 @@ fun ShoppingScreen() {
                             Text(dieta.messaggio.orEmpty(), style = IosText.subhead, color = Ios.textSecondary)
                         }
                     } else {
-                        PrimaryButton(stringResource(R.string.dieta_scegli), onClick = { scegliPdf.launch(arrayOf("application/pdf")) })
+                        // la dieta e' gia' salvata (Impostazioni): si scelgono giorni e persone e la lista e' pronta
+                        PrimaryButton(stringResource(R.string.dieta_scegli), onClick = { GiorniDieta.daSalvato() })
                     }
                     if (!dieta.inCorso && dieta.messaggio != null) {
                         Spacer(Modifier.size(10.dp))

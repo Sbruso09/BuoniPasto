@@ -42,6 +42,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
+import com.mario.buonipasto.ai.MenuDieta
 import androidx.core.app.NotificationManagerCompat
 import com.mario.buonipasto.Lingua
 import com.mario.buonipasto.R
@@ -143,6 +145,11 @@ fun SettingsScreen(repository: Repository, session: Session, members: List<Membe
         }
 
         // ---------------------------------------------------------------- assistente AI
+        // PDF della dieta: letto una volta, condiviso con il gruppo
+        AndroidView(
+            factory = { MenuDieta.FabbricaImpostazioni().invoke(it) as android.view.View },
+            modifier = Modifier.fillMaxWidth(),
+        )
         GroupHeader(stringResource(R.string.imp_assistente))
         ChiaviAi(context, versioneChiavi) { versioneChiavi++ }
         GroupFooter(stringResource(R.string.imp_assistente_nota))

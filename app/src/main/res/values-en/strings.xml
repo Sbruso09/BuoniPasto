@@ -148,8 +148,8 @@
     <string name="notif_ai_lavoro_canale">Assistant working</string>
     <string name="notif_ai_lavoro">Preparing the reply…</string>
     <string name="dieta_titolo">List from your diet</string>
-    <string name="dieta_sottotitolo">Pick your diet PDF: the assistant reads every meal and builds the shopping list by aisle.</string>
-    <string name="dieta_scegli">Choose diet PDF</string>
+    <string name="dieta_sottotitolo">"Choose days and people: the list is created instantly from the diet saved in Settings."</string>
+    <string name="dieta_scegli">Create list from diet</string>
     <string name="dieta_quanti_giorni">For how many days?</string>
     <string name="dieta_quanti_giorni_testo">Quantities are calculated for the chosen period and added to the list.</string>
     <string name="dieta_crea">Create list</string>
@@ -238,4 +238,16 @@
     <string name="menu_entrambi" formatted="true">Both</string>
     <string name="menu_nessun_pasto" formatted="true">No meals for this day.</string>
     <string name="menu_traduco">Translating the menu…</string>
+    <string name="imp_dieta" formatted="true">Diet</string>
+    <string name="imp_dieta_pdf" formatted="true">Diet PDF</string>
+    <string name="imp_dieta_nessuno" formatted="true">No PDF loaded</string>
+    <string name="imp_dieta_carica" formatted="true">Load the PDF</string>
+    <string name="imp_dieta_cambia" formatted="true">Replace the PDF</string>
+    <string name="imp_dieta_rileggi" formatted="true">needs reloading</string>
+    <string name="imp_dieta_nota" formatted="true">The PDF is read only once: the Menu tab and the shopping list use the saved data instantly. The diet is shared with the other person in the group, like the AI keys.</string>
+    <string name="lista_nessuna_dieta_t" formatted="true">No saved diet</string>
+    <string name="lista_nessuna_dieta" formatted="true">Load the diet PDF: it is read only once, then the list is created instantly.</string>
+    <string name="lista_creata" formatted="true">Added %1$d foods to the list</string>
+    <string name="dieta_attendi" formatted="true">Still reading the diet, please wait a few seconds…</string>
+    <string name="menu_fase_spesa" formatted="true">Preparing the foods for the shopping list…</string>
 </resources>
