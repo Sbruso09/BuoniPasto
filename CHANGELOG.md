@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.4 — 2026-11-04: Nomi degli alimenti coerenti tra i giorni
+
+- Primo passaggio con il catalogo degli alimenti della dieta; i giorni usano solo quei nomi (niente doppioni).
+- Temperatura 0: lo stesso PDF dà sempre lo stesso risultato.
+
 ## 2.3 — 2026-11-04: Lettura della dieta giorno per giorno
 
 - La dieta viene letta un giorno alla volta (quattro richieste in parallelo), così nessun giorno viene saltato.
