@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.8 — 2026-11-04: Stima del costo della spesa
+
+- Sotto la scheda della dieta: costo stimato degli articoli da prendere (prezzi medi da supermercato) e buoni pasto necessari.
+
 ## 2.7 — 2026-11-04: Yogurt greco, croissant e alimenti dei piatti composti
 
 - Lo yogurt greco resta un prodotto a sé (non finisce più nei fiocchi di latte).

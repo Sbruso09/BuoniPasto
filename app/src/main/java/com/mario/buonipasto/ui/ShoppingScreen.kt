@@ -53,6 +53,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.mario.buonipasto.ai.GiorniDieta
 import com.mario.buonipasto.ai.ModificaArticolo
+import com.mario.buonipasto.ai.Stima
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mario.buonipasto.R
 import com.mario.buonipasto.ai.Dieta
@@ -125,6 +126,9 @@ fun ShoppingScreen() {
                         }
                     }
                 }
+                // stima del costo della spesa e buoni necessari
+                val stima = Stima.testo()
+                if (stima.isNotEmpty()) GroupFooter(stima)
             }
 
             // ------------------------------------------------------------ aggiungi a mano

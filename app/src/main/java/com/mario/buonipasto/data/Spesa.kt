@@ -53,6 +53,7 @@ object ListaSpesa {
     private fun prefs(c: Context) = c.getSharedPreferences("spesa", Context.MODE_PRIVATE)
 
     fun carica(c: Context) {
+        com.mario.buonipasto.ai.Stima.contesto(c)
         if (caricata) return
         caricata = true
         val json = prefs(c).getString(K, null) ?: return
@@ -64,6 +65,7 @@ object ListaSpesa {
     }
 
     private fun salva(c: Context, l: List<Articolo>) {
+        com.mario.buonipasto.ai.Stima.cambiata(c, l) // aggiorna la stima del costo e i pulsanti in cima alla lista
         _articoli.value = l
         prefs(c).edit().putString(K, gson.toJson(l)).apply()
     }

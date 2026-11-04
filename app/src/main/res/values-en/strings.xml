@@ -224,4 +224,6 @@
     <string name="mod_nome">Name</string>
     <string name="mod_salva">Save</string>
     <string name="mod_esempio">e.g. 250 g</string>
+    <string name="stima_testo" formatted="true">Estimated cost: about %1$s · %2$d vouchers of %3$s needed (indicative average prices)</string>
+    <string name="stima_testo_1" formatted="true">Estimated cost: about %1$s · %2$d voucher of %3$s is enough (indicative average prices)</string>
 </resources>

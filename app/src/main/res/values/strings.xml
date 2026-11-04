@@ -224,4 +224,6 @@
     <string name="mod_nome">Nome</string>
     <string name="mod_salva">Salva</string>
     <string name="mod_esempio">es. 250 g</string>
+    <string name="stima_testo" formatted="true">Spesa stimata: circa %1$s · servono %2$d buoni da %3$s (prezzi medi indicativi)</string>
+    <string name="stima_testo_1" formatted="true">Spesa stimata: circa %1$s · basta %2$d buono da %3$s (prezzi medi indicativi)</string>
 </resources>
