@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.0.3 — 2026-11-04: Menu tradotto nella lingua dell'app
+
+- Se la dieta è in un'altra lingua il menu viene tradotto una volta e salvato.
+
 ## 3.0.2 — 2026-11-04: Tabella del menu sempre piena
 
 - Le colonne delle persone si ricavano dagli alimenti letti ("Person A", "A (Mario)" e "A" sono la stessa persona).

@@ -237,4 +237,5 @@
     <string name="menu_chiave" formatted="true">Per leggere il PDF imposta la chiave Gemini nelle Impostazioni.</string>
     <string name="menu_entrambi" formatted="true">Entrambi</string>
     <string name="menu_nessun_pasto" formatted="true">Nessun pasto per questo giorno.</string>
+    <string name="menu_traduco">Traduco il menu…</string>
 </resources>

@@ -237,4 +237,5 @@
     <string name="menu_chiave" formatted="true">To read the PDF, set the Gemini key in Settings.</string>
     <string name="menu_entrambi" formatted="true">Both</string>
     <string name="menu_nessun_pasto" formatted="true">No meals for this day.</string>
+    <string name="menu_traduco">Translating the menu…</string>
 </resources>
