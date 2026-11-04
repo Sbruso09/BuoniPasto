@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.0.2 — 2026-11-04: Tabella del menu sempre piena
+
+- Le colonne delle persone si ricavano dagli alimenti letti ("Person A", "A (Mario)" e "A" sono la stessa persona).
+
 ## 3.0.1 — 2026-11-04: Corretto il crash all'avvio della 3.0
 
 - Corretto l'arresto dell'app all'apertura introdotto con la scheda Menu.
