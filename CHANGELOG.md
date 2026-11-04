@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.3 — 2026-11-04: Lettura della dieta giorno per giorno
+
+- La dieta viene letta un giorno alla volta (quattro richieste in parallelo), così nessun giorno viene saltato.
+
 ## 2.2 — 2026-11-04: Quantità della lista calcolate dall'app
 
 - L'AI estrae dal PDF ogni alimento con quantità e unità; somme e proporzioni le calcola l'app, non il modello.
