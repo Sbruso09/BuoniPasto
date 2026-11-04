@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.5 — 2026-11-04: Correzioni su uova e caffè
+
+- Le uova indicate in grammi diventano pezzi (50 g = 1 uovo, albumi esclusi).
+- Il caffè indicato come tazzina non viene più contato come 130 g: 7 g a tazzina.
+
 ## 2.4 — 2026-11-04: Nomi degli alimenti coerenti tra i giorni
 
 - Primo passaggio con il catalogo degli alimenti della dieta; i giorni usano solo quei nomi (niente doppioni).
