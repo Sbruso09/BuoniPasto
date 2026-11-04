@@ -212,4 +212,16 @@
     <string name="due_diete_fase">Reading both diets…</string>
     <string name="due_diete_errore">I can\'t read the diets: %1$s</string>
     <string name="due_diete_chiavi">To merge the diets you need the assistant keys: add them in Settings.</string>
+    <string name="giorni_titolo">Which days?</string>
+    <string name="giorni_testo">Choose the days of the week to shop for: the list will only include the foods of those days of the diet.</string>
+    <string name="giorni_brevi">M,T,W,T,F,S,S</string>
+    <string name="giorni_nomi">Mon,Tue,Wed,Thu,Fri,Sat,Sun</string>
+    <string name="giorni_tutti">Whole week</string>
+    <string name="giorni_nessuno">None</string>
+    <string name="giorni_settimana">whole week</string>
+    <string name="giorni_crea">Create list</string>
+    <string name="mod_quantita">Quantity</string>
+    <string name="mod_nome">Name</string>
+    <string name="mod_salva">Save</string>
+    <string name="mod_esempio">e.g. 250 g</string>
 </resources>

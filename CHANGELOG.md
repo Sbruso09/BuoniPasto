@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.6 — 2026-11-04: Spesa per giorni della settimana e quantità modificabili
+
+- Al posto di 3/7/14 giorni si scelgono i giorni della settimana (anche non consecutivi): la lista contiene solo gli alimenti di quei giorni.
+- Tenendo premuto un articolo si modificano nome e quantità, con i tasti − e +, oppure lo si elimina.
+
 ## 2.5 — 2026-11-04: Correzioni su uova e caffè
 
 - Le uova indicate in grammi diventano pezzi (50 g = 1 uovo, albumi esclusi).

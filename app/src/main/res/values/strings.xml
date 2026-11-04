@@ -212,4 +212,16 @@
     <string name="due_diete_fase">Leggo le due diete…</string>
     <string name="due_diete_errore">Non riesco a leggere le diete: %1$s</string>
     <string name="due_diete_chiavi">Per unire le diete servono le chiavi dell\'assistente: aggiungile nelle Impostazioni.</string>
+    <string name="giorni_titolo">Per quali giorni?</string>
+    <string name="giorni_testo">Scegli i giorni della settimana per cui fare la spesa: la lista conterrà solo gli alimenti di quei giorni della dieta.</string>
+    <string name="giorni_brevi">L,M,M,G,V,S,D</string>
+    <string name="giorni_nomi">Lun,Mar,Mer,Gio,Ven,Sab,Dom</string>
+    <string name="giorni_tutti">Tutta la settimana</string>
+    <string name="giorni_nessuno">Nessuno</string>
+    <string name="giorni_settimana">settimana intera</string>
+    <string name="giorni_crea">Crea lista</string>
+    <string name="mod_quantita">Quantità</string>
+    <string name="mod_nome">Nome</string>
+    <string name="mod_salva">Salva</string>
+    <string name="mod_esempio">es. 250 g</string>
 </resources>

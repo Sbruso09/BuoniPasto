@@ -51,19 +51,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import com.mario.buonipasto.ai.GiorniDieta
+import com.mario.buonipasto.ai.ModificaArticolo
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mario.buonipasto.R
 import com.mario.buonipasto.ai.Dieta
 import com.mario.buonipasto.data.Articolo
 import com.mario.buonipasto.data.ListaSpesa
 import com.mario.buonipasto.data.Reparti
-
-private fun nomeFile(c: Context, uri: Uri): String =
-    runCatching {
-        c.contentResolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME), null, null, null)?.use { cur ->
-            if (cur.moveToFirst()) cur.getString(0) else null
-        }
-    }.getOrNull()?.removeSuffix(".pdf")?.removeSuffix(".PDF") ?: "dieta"
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -72,15 +67,12 @@ fun ShoppingScreen() {
     val articoli by ListaSpesa.articoli.collectAsStateWithLifecycle()
     val dieta by Dieta.stato.collectAsStateWithLifecycle()
     var nuovo by remember { mutableStateOf("") }
-    var pdfScelto by remember { mutableStateOf<Uri?>(null) }
-    var giorni by remember { mutableIntStateOf(1) } // indice: 3, 7, 14 giorni
     var chiediSvuota by remember { mutableStateOf(false) }
-    var daEliminare by remember { mutableStateOf<Articolo?>(null) }
 
     val scegliPdf = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-        if (uri != null) pdfScelto = uri
+        // giorni della settimana e persone, poi la lettura
+        if (uri != null) GiorniDieta.daPdf(context, uri)
     }
-    val opzioniGiorni = listOf(3, 7, 14)
 
     Column(Modifier.fillMaxSize().background(Ios.background).statusBarsPadding()) {
         Row(Modifier.fillMaxWidth().padding(end = 16.dp, top = 6.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -189,7 +181,7 @@ fun ShoppingScreen() {
                                 RigaArticolo(
                                     a,
                                     onSpunta = { ListaSpesa.segna(context, a.id, !a.preso) },
-                                    onTieni = { daEliminare = a },
+                                    onTieni = { ModificaArticolo.mostra(context, a) },
                                 )
                             }
                         }
@@ -212,34 +204,6 @@ fun ShoppingScreen() {
         }
     }
 
-    pdfScelto?.let { uri ->
-        androidx.compose.material3.AlertDialog(
-            onDismissRequest = { pdfScelto = null },
-            containerColor = Ios.surfaceElevated,
-            title = { Text(stringResource(R.string.dieta_quanti_giorni), style = IosText.headline, color = Ios.textPrimary) },
-            text = {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text(stringResource(R.string.dieta_quanti_giorni_testo), style = IosText.footnote, color = Ios.textPrimary)
-                    Segmented(
-                        options = opzioniGiorni.map { pluralStringResource(R.plurals.giorni, it, it) },
-                        selected = giorni,
-                        onSelect = { giorni = it },
-                    )
-                }
-            },
-            confirmButton = {
-                androidx.compose.material3.TextButton(onClick = {
-                    Dieta.importa(context, uri, nomeFile(context, uri), opzioniGiorni[giorni])
-                    pdfScelto = null
-                }) { Text(stringResource(R.string.dieta_crea), style = IosText.headline, color = Ios.accent) }
-            },
-            dismissButton = {
-                androidx.compose.material3.TextButton(onClick = { pdfScelto = null }) {
-                    Text(stringResource(R.string.annulla), color = Ios.accent)
-                }
-            },
-        )
-    }
     if (chiediSvuota) {
         IosAlert(
             title = stringResource(R.string.lista_svuota),
@@ -251,20 +215,6 @@ fun ShoppingScreen() {
             onConfirm = {
                 ListaSpesa.svuota(context)
                 chiediSvuota = false
-            },
-        )
-    }
-    daEliminare?.let { a ->
-        IosAlert(
-            title = stringResource(R.string.lista_elimina_titolo, a.nome),
-            text = null,
-            confirm = stringResource(R.string.elimina),
-            dismiss = stringResource(R.string.annulla),
-            destructive = true,
-            onDismiss = { daEliminare = null },
-            onConfirm = {
-                ListaSpesa.elimina(context, a.id)
-                daEliminare = null
             },
         )
     }
