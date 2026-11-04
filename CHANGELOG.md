@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 2.9 — 2026-11-04: Carni separate nella lista
+
+- Pollo, vitello, manzo, maiale, pesce... restano prodotti diversi.
+
 ## 2.8 — 2026-11-04: Stima del costo della spesa
 
 - Sotto la scheda della dieta: costo stimato degli articoli da prendere (prezzi medi da supermercato) e buoni pasto necessari.
