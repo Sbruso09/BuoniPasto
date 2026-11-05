@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.3 — 2026-11-05: Spese inviate a BuyForTime
+
+- Toccando una spesa nella Home: "Invia a BuyForTime" (buoni, valore del buono e parte in contanti) oppure "Condividi" come testo.
+
 ## 3.2 — 2026-11-04: Pulsanti della lista in alto
 
 - "Elimina selezionati" e "Svuota la lista" sono in cima alla lista.

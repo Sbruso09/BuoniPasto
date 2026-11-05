@@ -14,7 +14,7 @@
     <string name="err_caricamento">%1$s\n\nControlla la connessione e le regole di Firestore.</string>
     <string name="movimenti">Movimenti</string>
     <string name="nessuna_spesa_mese">Nessuna spesa in questo mese. Aggiungine una con il + in alto.</string>
-    <string name="tieni_premuto_elimina">Tieni premuta una voce che hai inserito tu per eliminarla.</string>
+    <string name="tieni_premuto_elimina">Tocca una spesa per inviarla a BuyForTime o condividerla. Tieni premuta una voce che hai inserito tu per eliminarla.</string>
     <string name="segna_saldato">Segna come saldato</string>
     <string name="segna_saldato_testo">%1$s ha dato %2$s a %3$s? Il saldo tornerà a zero.</string>
     <string name="annulla">Annulla</string>
@@ -251,4 +251,12 @@
     <string name="dieta_attendi" formatted="true">Sto ancora leggendo la dieta, attendi qualche secondo…</string>
     <string name="menu_fase_spesa" formatted="true">Preparo gli alimenti per la lista della spesa…</string>
     <string name="lista_elimina_presi">Elimina selezionati</string>
+    <string name="ponte_spesa" formatted="true">Spesa alimentare</string>
+    <string name="ponte_invia" formatted="true">Invia a BuyForTime</string>
+    <string name="ponte_condividi" formatted="true">Condividi</string>
+    <string name="ponte_manca" formatted="true">BuyForTime non è installata (o va aggiornata): condivido la spesa come testo.</string>
+    <string name="ponte_testo_buoni" formatted="true">Buoni pasto: %1$d da %2$s</string>
+    <string name="ponte_testo_extra" formatted="true">In più: %1$s</string>
+    <string name="ponte_testo_totale" formatted="true">Totale: %1$s</string>
+    <string name="tocca_spesa" formatted="true">Tocca una spesa per inviarla a BuyForTime, tienila premuta per eliminarla.</string>
 </resources>

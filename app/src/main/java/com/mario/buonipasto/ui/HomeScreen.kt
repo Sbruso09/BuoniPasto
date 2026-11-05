@@ -48,6 +48,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.mario.buonipasto.ai.Ponte
 import com.mario.buonipasto.Lingua
 import com.mario.buonipasto.R
 import com.mario.buonipasto.data.Feed
@@ -392,7 +393,7 @@ private fun MovementRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .combinedClickable(onClick = {}, onLongClick = if (canDelete) onDelete else null)
+            .combinedClickable(onClick = { Ponte.Tocco(movement).invoke() }, onLongClick = if (canDelete) onDelete else null)
             .padding(horizontal = 16.dp, vertical = 11.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {

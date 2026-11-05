@@ -14,7 +14,7 @@
     <string name="err_caricamento">%1$s\n\nCheck your connection and the Firestore rules.</string>
     <string name="movimenti">Transactions</string>
     <string name="nessuna_spesa_mese">No expenses this month. Add one with the + at the top.</string>
-    <string name="tieni_premuto_elimina">Long-press an item you added to delete it.</string>
+    <string name="tieni_premuto_elimina">Tap an expense to send it to BuyForTime or share it. Long-press an item you added to delete it.</string>
     <string name="segna_saldato">Mark as settled</string>
     <string name="segna_saldato_testo">Did %1$s give %2$s to %3$s? The balance will go back to zero.</string>
     <string name="annulla">Cancel</string>
@@ -251,4 +251,12 @@
     <string name="dieta_attendi" formatted="true">Still reading the diet, please wait a few seconds…</string>
     <string name="menu_fase_spesa" formatted="true">Preparing the foods for the shopping list…</string>
     <string name="lista_elimina_presi">Delete checked</string>
+    <string name="ponte_spesa" formatted="true">Groceries</string>
+    <string name="ponte_invia" formatted="true">Send to BuyForTime</string>
+    <string name="ponte_condividi" formatted="true">Share</string>
+    <string name="ponte_manca" formatted="true">BuyForTime is not installed (or needs updating): sharing the expense as text.</string>
+    <string name="ponte_testo_buoni" formatted="true">Meal vouchers: %1$d of %2$s</string>
+    <string name="ponte_testo_extra" formatted="true">Extra: %1$s</string>
+    <string name="ponte_testo_totale" formatted="true">Total: %1$s</string>
+    <string name="tocca_spesa" formatted="true">Tap an expense to send it to BuyForTime, long-press to delete it.</string>
 </resources>
