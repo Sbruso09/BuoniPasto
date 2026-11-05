@@ -262,4 +262,19 @@
     <string name="stima_tarata" formatted="true">Spesa stimata: circa %1$s · servono %2$d buoni da %3$s (tarata sulle tue ultime %4$d spese)</string>
     <string name="stima_tarata_1" formatted="true">Spesa stimata: circa %1$s · basta %2$d buono da %3$s (tarata sulle tue ultime %4$d spese)</string>
     <string name="stima_imparata" formatted="true">Stima migliorata: hai speso %1$s per articoli stimati %2$s. Le prossime stime ne terranno conto.</string>
+    <string name="agg_titolo" formatted="true">Aggiungi spesa</string>
+    <string name="agg_suggerimento" formatted="true">Stima degli articoli: circa %1$s, cioè %2$d buoni (puoi cambiarli).</string>
+    <string name="agg_buoni" formatted="true">Buoni usati (da %1$s)</string>
+    <string name="agg_extra" formatted="true">In più, in contanti o carta (€)</string>
+    <string name="agg_nota" formatted="true">Nota</string>
+    <string name="agg_nota_es" formatted="true">es. Spesa Esselunga</string>
+    <string name="agg_divisione" formatted="true">Divisione</string>
+    <string name="agg_salva" formatted="true">Salva la spesa</string>
+    <string name="agg_fatto" formatted="true">Spesa aggiunta</string>
+    <string name="agg_extra_errato" formatted="true">Importo in più non valido.</string>
+    <string name="agg_vuota" formatted="true">Inserisci almeno un buono o un importo.</string>
+    <string name="agg_nessun_gruppo" formatted="true">Entra prima in un gruppo per registrare le spese.</string>
+    <string name="pag_titolo" formatted="true">Hai registrato il pagamento?</string>
+    <string name="pag_testo" formatted="true">Hai %1$d articoli spuntati ma non risulta ancora la spesa che li paga. Registrala prima di eliminarli: così entra nei conti e migliora la stima.</string>
+    <string name="pag_comunque" formatted="true">Elimina comunque</string>
 </resources>

@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.6 — 2026-11-05: Aggiungi spesa dalla lista
+
+- Tasto "Aggiungi spesa" in cima alla lista, con i buoni suggeriti dalla stima.
+- Prima di eliminare articoli spuntati senza una spesa registrata l'app chiede se si è registrato il pagamento.
+
 ## 3.5 — 2026-11-05: Stima della spesa tarata sulle spese reali
 
 - Quando si registra una spesa, l'app la confronta con la stima degli articoli spuntati e corregge le stime successive (ultime 10 spese).

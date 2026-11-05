@@ -262,4 +262,19 @@
     <string name="stima_tarata" formatted="true">Estimated cost: about %1$s · %2$d vouchers of %3$s needed (tuned on your last %4$d purchases)</string>
     <string name="stima_tarata_1" formatted="true">Estimated cost: about %1$s · %2$d voucher of %3$s is enough (tuned on your last %4$d purchases)</string>
     <string name="stima_imparata" formatted="true">Estimate improved: you spent %1$s on items estimated at %2$s. Future estimates will take it into account.</string>
+    <string name="agg_titolo" formatted="true">Add expense</string>
+    <string name="agg_suggerimento" formatted="true">Items estimate: about %1$s, that is %2$d vouchers (you can change it).</string>
+    <string name="agg_buoni" formatted="true">Vouchers used (of %1$s)</string>
+    <string name="agg_extra" formatted="true">Extra, in cash or card (€)</string>
+    <string name="agg_nota" formatted="true">Note</string>
+    <string name="agg_nota_es" formatted="true">e.g. Groceries</string>
+    <string name="agg_divisione" formatted="true">Split</string>
+    <string name="agg_salva" formatted="true">Save the expense</string>
+    <string name="agg_fatto" formatted="true">Expense added</string>
+    <string name="agg_extra_errato" formatted="true">Invalid extra amount.</string>
+    <string name="agg_vuota" formatted="true">Enter at least one voucher or an amount.</string>
+    <string name="agg_nessun_gruppo" formatted="true">Join a group first to record expenses.</string>
+    <string name="pag_titolo" formatted="true">Did you record the payment?</string>
+    <string name="pag_testo" formatted="true">You have %1$d checked items but no expense paying for them yet. Record it before deleting them: it goes into the accounts and improves the estimate.</string>
+    <string name="pag_comunque" formatted="true">Delete anyway</string>
 </resources>
