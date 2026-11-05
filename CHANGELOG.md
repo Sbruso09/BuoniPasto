@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.4 — 2026-11-05: Dieta e chiavi AI condivise nel gruppo
+
+- Se uno dei due carica il PDF della dieta, menu e lista sono disponibili anche per l'altro.
+- Le chiavi Gemini e Groq inserite da uno valgono per entrambi (salvate cifrate con il codice del gruppo).
+
 ## 3.3 — 2026-11-05: Spese inviate a BuyForTime
 
 - Toccando una spesa nella Home: "Invia a BuyForTime" (buoni, valore del buono e parte in contanti) oppure "Condividi" come testo.
