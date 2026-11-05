@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.5 — 2026-11-05: Stima della spesa tarata sulle spese reali
+
+- Quando si registra una spesa, l'app la confronta con la stima degli articoli spuntati e corregge le stime successive (ultime 10 spese).
+
 ## 3.4 — 2026-11-05: Dieta e chiavi AI condivise nel gruppo
 
 - Se uno dei due carica il PDF della dieta, menu e lista sono disponibili anche per l'altro.

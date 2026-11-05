@@ -259,4 +259,7 @@
     <string name="ponte_testo_extra" formatted="true">In più: %1$s</string>
     <string name="ponte_testo_totale" formatted="true">Totale: %1$s</string>
     <string name="tocca_spesa" formatted="true">Tocca una spesa per inviarla a BuyForTime, tienila premuta per eliminarla.</string>
+    <string name="stima_tarata" formatted="true">Spesa stimata: circa %1$s · servono %2$d buoni da %3$s (tarata sulle tue ultime %4$d spese)</string>
+    <string name="stima_tarata_1" formatted="true">Spesa stimata: circa %1$s · basta %2$d buono da %3$s (tarata sulle tue ultime %4$d spese)</string>
+    <string name="stima_imparata" formatted="true">Stima migliorata: hai speso %1$s per articoli stimati %2$s. Le prossime stime ne terranno conto.</string>
 </resources>

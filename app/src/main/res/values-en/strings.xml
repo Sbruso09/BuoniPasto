@@ -259,4 +259,7 @@
     <string name="ponte_testo_extra" formatted="true">Extra: %1$s</string>
     <string name="ponte_testo_totale" formatted="true">Total: %1$s</string>
     <string name="tocca_spesa" formatted="true">Tap an expense to send it to BuyForTime, long-press to delete it.</string>
+    <string name="stima_tarata" formatted="true">Estimated cost: about %1$s · %2$d vouchers of %3$s needed (tuned on your last %4$d purchases)</string>
+    <string name="stima_tarata_1" formatted="true">Estimated cost: about %1$s · %2$d voucher of %3$s is enough (tuned on your last %4$d purchases)</string>
+    <string name="stima_imparata" formatted="true">Estimate improved: you spent %1$s on items estimated at %2$s. Future estimates will take it into account.</string>
 </resources>
