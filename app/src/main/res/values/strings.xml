@@ -199,6 +199,8 @@
         <item quantity="one">%d articolo da prendere</item>
         <item quantity="other">%d articoli da prendere</item>
     </plurals>
+
+    <!-- versioni 2.1 - 3.9 -->
     <string name="chip_due_diete_l">Unisci due diete</string>
     <string name="chip_due_diete_t">Crea una dieta unica da due diete</string>
     <string name="persone_titolo">Per quante persone?</string>
@@ -286,4 +288,8 @@
     <string name="saldi_buoni_pari" formatted="true">Nessuno deve buoni all\'altro: le spese con i buoni sono in pari.</string>
     <string name="saldi_soldi_spiega" formatted="true">Spese pagate senza buoni e parti pagate in contanti o carta: si ripagano solo con soldi veri, non con i buoni.</string>
     <string name="saldi_conferma" formatted="true">%1$s ha dato %2$s in soldi a %3$s? Il saldo dei soldi torna a zero, quello dei buoni non cambia.</string>
+    <string name="saldi_ripagato" formatted="true">Debito ripagato in soldi</string>
+    <string name="saldi_ripagato_testo" formatted="true">%1$s ha finito i buoni e ha ripagato in soldi %2$s a %3$s? Il saldo dei buoni torna a zero, quello dei soldi non cambia.</string>
+    <string name="saldi_ripagato_importo" formatted="true">Soldi dati (€)</string>
+    <string name="saldi_ripagato_nota" formatted="true">Proposto in base al valore di un buono (%1$s): puoi cambiarlo se vi siete accordati diversamente.</string>
 </resources>

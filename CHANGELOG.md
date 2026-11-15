@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.9 — 2026-11-15: Debito di buoni ripagato in soldi
+
+- Nel saldo dei buoni, "Debito ripagato in soldi": chi ha finito i buoni salda tutto il debito in contanti e il saldo dei buoni torna a zero.
+
 ## 3.8 — 2026-11-15: Bilancia animata e saldi validi per tutte le spese
 
 - Nuova bilancia in stile iOS con molla e rimbalzo, selettore Buoni pasto / Soldi animato, riepilogo dei due saldi.

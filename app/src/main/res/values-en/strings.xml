@@ -199,6 +199,8 @@
         <item quantity="one">%d item to get</item>
         <item quantity="other">%d items to get</item>
     </plurals>
+
+    <!-- versioni 2.1 - 3.9 -->
     <string name="chip_due_diete_l">Merge two diets</string>
     <string name="chip_due_diete_t">Create a single diet from two diets</string>
     <string name="persone_titolo">For how many people?</string>
@@ -286,4 +288,8 @@
     <string name="saldi_buoni_pari" formatted="true">Nobody owes vouchers: voucher purchases are even.</string>
     <string name="saldi_soldi_spiega" formatted="true">Purchases paid without vouchers and parts paid in cash or card: they are paid back only with real money, not vouchers.</string>
     <string name="saldi_conferma" formatted="true">Did %1$s give %2$s in money to %3$s? The money balance goes back to zero, the voucher balance does not change.</string>
+    <string name="saldi_ripagato" formatted="true">Debt paid back in money</string>
+    <string name="saldi_ripagato_testo" formatted="true">Did %1$s run out of vouchers and pay back %2$s in money to %3$s? The voucher balance goes back to zero, the money balance does not change.</string>
+    <string name="saldi_ripagato_importo" formatted="true">Money given (€)</string>
+    <string name="saldi_ripagato_nota" formatted="true">Suggested from the value of one voucher (%1$s): change it if you agreed otherwise.</string>
 </resources>

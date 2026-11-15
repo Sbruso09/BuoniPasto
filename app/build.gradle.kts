@@ -13,8 +13,8 @@ android {
         applicationId = "com.mario.buonipasto"
         minSdk = 26
         targetSdk = 35
-        versionCode = 23
-        versionName = "3.8"
+        versionCode = 24
+        versionName = "3.9"
     }
 
     signingConfigs {
