@@ -2,6 +2,11 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.8 — 2026-11-15: Bilancia animata e saldi validi per tutte le spese
+
+- Nuova bilancia in stile iOS con molla e rimbalzo, selettore Buoni pasto / Soldi animato, riepilogo dei due saldi.
+- Anche le spese inserite prima della 3.7 seguono la nuova logica dei due saldi.
+
 ## 3.7 — 2026-11-15: Saldi separati per buoni pasto e soldi
 
 - Saldo dei buoni (in numero di buoni) e saldo dei soldi (in euro) separati: i buoni si pareggiano con le spese successive, i soldi con "Segna come saldato".
