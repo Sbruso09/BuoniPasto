@@ -48,7 +48,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.mario.buonipasto.ai.Ponte
+import com.mario.buonipasto.ai.Saldi
 import com.mario.buonipasto.Lingua
 import com.mario.buonipasto.R
 import com.mario.buonipasto.data.Feed
@@ -139,7 +141,12 @@ fun HomeScreen(
                     contentPadding = PaddingValues(top = 8.dp, bottom = 32.dp),
                 ) {
                     item {
-                        BalancePanel(members, me, other, movements, session.groupCode) { settling = true }
+                        // due saldi separati (buoni e soldi) con la bilancia animata
+                        AndroidView(
+                            factory = { Saldi.Fabbrica().invoke(it) as android.view.View },
+                            update = { Saldi.Aggiorna(members, me, other, movements, session.groupCode).invoke(it) },
+                            modifier = Modifier.fillMaxWidth(),
+                        )
                     }
                     item {
                         MonthHeader(month, { month = month.minusMonths(1) }, { month = month.plusMonths(1) })

@@ -277,4 +277,13 @@
     <string name="pag_titolo" formatted="true">Did you record the payment?</string>
     <string name="pag_testo" formatted="true">You have %1$d checked items but no expense paying for them yet. Record it before deleting them: it goes into the accounts and improves the estimate.</string>
     <string name="pag_comunque" formatted="true">Delete anyway</string>
+    <string name="saldi_buoni_titolo" formatted="true">Meal vouchers</string>
+    <string name="saldi_soldi_titolo" formatted="true">Money</string>
+    <string name="saldi_buono_1" formatted="true">%1$s voucher</string>
+    <string name="saldi_buoni_n" formatted="true">%1$s vouchers</string>
+    <string name="saldi_buoni_ti_deve" formatted="true">It evens out by itself: %1$s pays the next voucher purchases until they have used %2$s, or pay them back in money.</string>
+    <string name="saldi_buoni_devi" formatted="true">It evens out by itself: you pay the next voucher purchases until you have used %1$s, or pay them back in money.</string>
+    <string name="saldi_buoni_pari" formatted="true">Nobody owes vouchers: voucher purchases are even.</string>
+    <string name="saldi_soldi_spiega" formatted="true">Purchases paid without vouchers and parts paid in cash or card: they are paid back only with real money, not vouchers.</string>
+    <string name="saldi_conferma" formatted="true">Did %1$s give %2$s in money to %3$s? The money balance goes back to zero, the voucher balance does not change.</string>
 </resources>

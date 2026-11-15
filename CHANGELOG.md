@@ -2,6 +2,10 @@
 
 Versioni di BuoniPasto, dalla più recente.
 
+## 3.7 — 2026-11-15: Saldi separati per buoni pasto e soldi
+
+- Saldo dei buoni (in numero di buoni) e saldo dei soldi (in euro) separati: i buoni si pareggiano con le spese successive, i soldi con "Segna come saldato".
+
 ## 3.6 — 2026-11-05: Aggiungi spesa dalla lista
 
 - Tasto "Aggiungi spesa" in cima alla lista, con i buoni suggeriti dalla stima.

@@ -277,4 +277,13 @@
     <string name="pag_titolo" formatted="true">Hai registrato il pagamento?</string>
     <string name="pag_testo" formatted="true">Hai %1$d articoli spuntati ma non risulta ancora la spesa che li paga. Registrala prima di eliminarli: così entra nei conti e migliora la stima.</string>
     <string name="pag_comunque" formatted="true">Elimina comunque</string>
+    <string name="saldi_buoni_titolo" formatted="true">Buoni pasto</string>
+    <string name="saldi_soldi_titolo" formatted="true">Soldi</string>
+    <string name="saldi_buono_1" formatted="true">%1$s buono</string>
+    <string name="saldi_buoni_n" formatted="true">%1$s buoni</string>
+    <string name="saldi_buoni_ti_deve" formatted="true">Si pareggia da solo: le prossime spese con i buoni le paga %1$s, finché non avrà usato %2$s, oppure ripagarli in soldi.</string>
+    <string name="saldi_buoni_devi" formatted="true">Si pareggia da solo: le prossime spese con i buoni pagale tu, finché non avrai usato %1$s, oppure ripagali in soldi.</string>
+    <string name="saldi_buoni_pari" formatted="true">Nessuno deve buoni all\'altro: le spese con i buoni sono in pari.</string>
+    <string name="saldi_soldi_spiega" formatted="true">Spese pagate senza buoni e parti pagate in contanti o carta: si ripagano solo con soldi veri, non con i buoni.</string>
+    <string name="saldi_conferma" formatted="true">%1$s ha dato %2$s in soldi a %3$s? Il saldo dei soldi torna a zero, quello dei buoni non cambia.</string>
 </resources>
