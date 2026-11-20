@@ -17,23 +17,29 @@ android {
         versionName = "3.9"
     }
 
+    // Chiave di firma personale: NON e' nel repository. Se app/buonipasto.keystore esiste (in locale, o creata
+    // dal workflow da un secret di GitHub) gli aggiornamenti si installano sopra l'app gia' presente;
+    // altrimenti l'APK viene firmato con la chiave di debug.
+    val chiave = file("buonipasto.keystore")
+    val password = (project.findProperty("buonipastoPassword") as String?) ?: System.getenv("BUONIPASTO_KEY_PASSWORD")
     signingConfigs {
-        // chiave fissa: ogni nuova versione si installa sopra la precedente senza perdere i dati
-        create("personale") {
-            storeFile = file("buonipasto.keystore")
-            storePassword = "buonipasto"
-            keyAlias = "buonipasto"
-            keyPassword = "buonipasto"
+        if (chiave.exists() && password != null) {
+            create("personale") {
+                storeFile = chiave
+                storePassword = password
+                keyAlias = (project.findProperty("buonipastoAlias") as String?) ?: System.getenv("BUONIPASTO_KEY_ALIAS") ?: "buonipasto"
+                keyPassword = password
+            }
         }
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("personale")
+            signingConfig = signingConfigs.findByName("personale") ?: signingConfigs.getByName("debug")
         }
         debug {
-            signingConfig = signingConfigs.getByName("personale")
+            signingConfigs.findByName("personale")?.let { signingConfig = it }
         }
     }
 

@@ -17,7 +17,14 @@ jobs:
           distribution: temurin
           java-version: "17"
       - uses: gradle/actions/setup-gradle@v4
+      - name: Chiave di firma (facoltativa, dai secret del repository)
+        env:
+          KEYSTORE_BASE64: ${{ secrets.BUONIPASTO_KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then echo "$KEYSTORE_BASE64" | base64 -d > app/buonipasto.keystore; fi
       - name: Compila l'APK
+        env:
+          BUONIPASTO_KEY_PASSWORD: ${{ secrets.BUONIPASTO_KEY_PASSWORD }}
         run: |
           set -o pipefail
           chmod +x gradlew
